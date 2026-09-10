@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 96" width="340" height="96" role="img" aria-label="ReceiptIQ">
+  <title>ReceiptIQ</title>
+  <!-- One text run: tspans flow by natural advance width, so "IQ" can never
+       overlap "Receipt" no matter which fallback font renders this file when
+       it's loaded as an <img>. The raised dot is the stamp / ink-drop accent. -->
+  <text x="6" y="62" font-size="46" font-weight="700"
+        font-family="'IBM Plex Mono','SFMono-Regular',Menlo,Consolas,monospace">
+    <tspan fill="#1B2A41" letter-spacing="-1">Receipt</tspan><tspan
+        fill="#B8382B" font-size="30" dy="-16">.</tspan><tspan
+        fill="#B8382B" dy="16" dx="1" letter-spacing="-2"
+        font-family="'Oswald','Arial Narrow','Roboto Condensed',sans-serif">IQ</tspan>
+  </text>
+  <line x1="6" y1="80" x2="334" y2="80" stroke="#8B7E74" stroke-width="2" stroke-dasharray="3 4"/>
+</svg>

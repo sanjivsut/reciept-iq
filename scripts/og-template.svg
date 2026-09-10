@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <style>
+      .cond { font-family: 'Oswald','Arial Narrow','Helvetica Neue',Arial,sans-serif; }
+      .mono { font-family: 'IBM Plex Mono','Courier New',monospace; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="630" fill="#FBF7EE"/>
+
+  <!-- wordmark (single run so "IQ" flows past "Receipt" in any fallback font) -->
+  <text x="70" y="196" font-size="88" font-weight="700">
+    <tspan class="mono" fill="#1B2A41" letter-spacing="-2">Receipt</tspan><tspan
+        class="mono" fill="#B8382B" font-size="52" dy="-30">.</tspan><tspan
+        class="cond" fill="#B8382B" dy="30" dx="2" letter-spacing="-5">IQ</tspan>
+  </text>
+  <line x1="74" y1="230" x2="620" y2="230" stroke="#8B7E74" stroke-width="3" stroke-dasharray="4 6"/>
+
+  <text x="72" y="330" class="cond" font-size="66" font-weight="700" fill="#1B2A41">KNOW IF YOU'RE BEING</text>
+  <text x="72" y="398" class="cond" font-size="66" font-weight="700" fill="#1B2A41">OVERCHARGED.</text>
+  <text x="74" y="452" class="mono" font-size="30" fill="#8B7E74">Scan a receipt. Get instant verdicts.</text>
+
+  <text x="72" y="574" class="mono" font-size="26" fill="#8B7E74">Demo project — illustrative data</text>
+
+  <!-- mini receipt tape -->
+  <g transform="translate(792,86)">
+    <rect x="0" y="0" width="316" height="404" fill="#FFFDF7" stroke="#1B2A41" stroke-width="2"/>
+    <g class="mono" font-size="24" fill="#1B2A41">
+      <text x="24" y="58">MILK 1L</text>
+      <text x="24" y="112">SHAMPOO</text>
+      <text x="24" y="166">NETFLIX</text>
+      <text x="24" y="220">RICE 1KG</text>
+      <text x="24" y="274">BISCUITS</text>
+    </g>
+    <!-- pills -->
+    <g class="cond" font-size="19" font-weight="700" text-anchor="middle">
+      <rect x="196" y="38" width="96" height="30" rx="15" fill="#2E7D32"/>
+      <text x="244" y="59" fill="#FFFDF7">FAIR</text>
+      <rect x="196" y="92" width="96" height="30" rx="15" fill="#B8382B"/>
+      <text x="244" y="113" fill="#FFFDF7">OVER</text>
+      <rect x="196" y="146" width="96" height="30" rx="15" fill="#B8382B"/>
+      <text x="244" y="167" fill="#FFFDF7">TRAP</text>
+      <rect x="196" y="200" width="96" height="30" rx="15" fill="#2E7D32"/>
+      <text x="244" y="221" fill="#FFFDF7">FAIR</text>
+      <rect x="196" y="254" width="96" height="30" rx="15" fill="#2E7D32"/>
+      <text x="244" y="275" fill="#FFFDF7">FAIR</text>
+    </g>
+    <line x1="16" y1="312" x2="300" y2="312" stroke="#8B7E74" stroke-width="1.5" stroke-dasharray="3 4"/>
+    <path d="M0 404 l26 -18 l26 18 l26 -18 l26 18 l26 -18 l26 18 l26 -18 l26 18 l26 -18 l26 18 l26 -18 l26 18 V404 Z" fill="#FBF7EE"/>
+  </g>
+
+  <!-- IQ Verified stamp -->
+  <g transform="translate(1012,438)">
+    <circle r="74" fill="none" stroke="#B8382B" stroke-width="6" opacity="0.85"/>
+    <circle r="60" fill="none" stroke="#B8382B" stroke-width="2" opacity="0.6"/>
+    <text x="0" y="-6" text-anchor="middle" class="cond" font-size="40" font-weight="700" fill="#B8382B" transform="rotate(-8)">IQ</text>
+    <text x="0" y="30" text-anchor="middle" class="cond" font-size="20" font-weight="700" letter-spacing="3" fill="#B8382B" transform="rotate(-8)">VERIFIED</text>
+  </g>
+</svg>

@@ -1,0 +1,785 @@
+/* ReceiptIQ design system — physical receipt / rubber-stamp inspection.
+   Palette, type and the receipt-tape + stamp primitives live here. Component
+   files use these classes; there is intentionally no utility framework. */
+
+:root {
+  /* Palette (shared with the logo — see Branding & Logo in the README) */
+  --paper: #fffdf7;
+  --bg-cream: #fbf7ee;
+  --ink: #1b2a41;
+  --ink-soft: #33415c;
+  --stamp-red: #b8382b;
+  --stamp-red-ink: #a5321f;
+  --stamp-green: #2e7d32;
+  --stamp-green-ink: #276a2a;
+  --grey-brown: #8b7e74;
+  --hairline: #ded3c0;
+
+  /* Type — two families, both thematically justified.
+     mono = receipt-tape line-item content + body; condensed = headers/labels. */
+  --font-mono: var(--font-plex-mono), ui-monospace, "SFMono-Regular", "Menlo",
+    "Consolas", monospace;
+  --font-condensed: var(--font-oswald), "Oswald", "Arial Narrow", "Roboto Condensed",
+    system-ui, sans-serif;
+
+  --tape-width: 25rem;
+  --nav-h: 3.75rem;
+  --radius: 2px;
+  --shadow-tape: 0 1px 0 rgba(27, 42, 65, 0.04), 0 12px 30px -18px rgba(27, 42, 65, 0.35);
+
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-cream);
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 27px,
+      rgba(27, 42, 65, 0.028) 27px,
+      rgba(27, 42, 65, 0.028) 28px
+    );
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-condensed);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  margin: 0 0 0.5em;
+}
+
+h1 {
+  font-size: clamp(2.1rem, 6vw, 3.6rem);
+}
+h2 {
+  font-size: clamp(1.5rem, 3.4vw, 2.1rem);
+}
+h3 {
+  font-size: 1.15rem;
+  letter-spacing: 0.04em;
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+a {
+  color: var(--ink);
+  text-decoration-color: var(--grey-brown);
+  text-underline-offset: 3px;
+}
+a:hover {
+  text-decoration-color: var(--stamp-red);
+}
+
+:focus-visible {
+  outline: 2px solid var(--stamp-red);
+  outline-offset: 2px;
+}
+
+.muted {
+  color: var(--grey-brown);
+}
+
+.shell {
+  width: 100%;
+  max-width: 68rem;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* ---------- Buttons ---------- */
+
+.btn {
+  --btn-bg: var(--ink);
+  --btn-fg: var(--paper);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-condensed);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.95rem;
+  padding: 0.7rem 1.4rem;
+  border: 1.5px solid var(--ink);
+  border-radius: var(--radius);
+  background: var(--btn-bg);
+  color: var(--btn-fg);
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.06s ease, box-shadow 0.12s ease;
+}
+.btn:hover {
+  box-shadow: 3px 3px 0 var(--ink);
+  transform: translate(-1px, -1px);
+}
+.btn:active {
+  box-shadow: 1px 1px 0 var(--ink);
+  transform: translate(1px, 1px);
+}
+.btn--ghost {
+  --btn-bg: transparent;
+  --btn-fg: var(--ink);
+}
+.btn--red {
+  --btn-bg: var(--stamp-red);
+  --btn-fg: var(--paper);
+  border-color: var(--stamp-red-ink);
+}
+.btn--red:hover {
+  box-shadow: 3px 3px 0 var(--stamp-red-ink);
+}
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+/* ---------- Nav ---------- */
+
+.nav {
+  border-bottom: 1.5px solid var(--ink);
+  background: var(--bg-cream);
+}
+.nav__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  /* padding-block only — keep the .shell horizontal padding so the header
+     doesn't touch the screen edges on mobile. */
+  padding-block: 0.85rem;
+}
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+  font-family: var(--font-condensed);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.95rem;
+}
+.nav__links a {
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+}
+.nav__links a:hover {
+  border-bottom-color: var(--stamp-red);
+}
+
+.wordmark {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+.wordmark img {
+  display: block;
+  height: 30px;
+  width: auto;
+}
+@media (min-width: 1024px) {
+  .wordmark img {
+    height: 38px;
+  }
+}
+
+/* ---------- Receipt tape ---------- */
+
+.tape {
+  position: relative;
+  width: 100%;
+  max-width: var(--tape-width);
+  margin: 0 auto;
+  background: var(--paper);
+  color: var(--ink);
+  padding: 1.6rem 1.4rem;
+  box-shadow: var(--shadow-tape);
+  filter: drop-shadow(0 0 0 transparent);
+}
+/* torn / perforated top and bottom edges */
+.tape::before,
+.tape::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background:
+    radial-gradient(circle at 8px 12px, transparent 8px, var(--paper) 9px) repeat-x;
+  background-size: 18px 12px;
+}
+.tape::before {
+  top: -10px;
+  transform: scaleY(-1);
+}
+.tape::after {
+  bottom: -10px;
+}
+.tape__head {
+  text-align: center;
+  border-bottom: 1.5px dashed var(--grey-brown);
+  padding-bottom: 0.9rem;
+  margin-bottom: 0.9rem;
+}
+.tape__store {
+  font-family: var(--font-condensed);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 1.05rem;
+}
+.tape__meta {
+  font-size: 0.8rem;
+  color: var(--grey-brown);
+  letter-spacing: 0.04em;
+}
+.tape__rule {
+  border: 0;
+  border-top: 1.5px dashed var(--grey-brown);
+  margin: 0.9rem 0;
+}
+
+.line {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.4rem 0.75rem;
+  align-items: baseline;
+  padding: 0.5rem 0;
+  border-bottom: 1px dotted var(--hairline);
+}
+.line:last-child {
+  border-bottom: 0;
+}
+.line__name {
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  font-size: 0.9rem;
+}
+.line__sub {
+  grid-column: 1 / -1;
+  font-size: 0.75rem;
+  color: var(--grey-brown);
+}
+.line__price {
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.line__stamps {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.35rem;
+}
+
+.tape__totals {
+  margin-top: 1rem;
+  border-top: 2px solid var(--ink);
+  padding-top: 0.8rem;
+  font-family: var(--font-condensed);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.tape__totals .line {
+  border-bottom: 0;
+  padding: 0.2rem 0;
+}
+.tape__totals strong {
+  font-weight: 700;
+}
+.totals-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+/* Compact tape — smaller footprint for the landing hero so the banner fits
+   one screen height without a giant receipt pushing it past the fold. */
+.tape--compact {
+  max-width: 21rem;
+  padding: 1.1rem 1.1rem;
+  font-size: 0.82rem;
+}
+.tape--compact .tape__head {
+  padding-bottom: 0.6rem;
+  margin-bottom: 0.6rem;
+}
+.tape--compact .tape__store {
+  font-size: 0.95rem;
+}
+.tape--compact .line {
+  padding: 0.3rem 0;
+}
+.tape--compact .line__name {
+  font-size: 0.8rem;
+}
+.tape--compact .line__sub {
+  font-size: 0.68rem;
+}
+.tape--compact .stamp {
+  font-size: 0.64rem;
+  padding: 0.12rem 0.4rem;
+}
+.tape--compact .tape__totals {
+  margin-top: 0.6rem;
+  padding-top: 0.55rem;
+}
+.tape--compact .tape__totals .line {
+  padding: 0.1rem 0;
+}
+
+/* ---------- Verdict stamps ---------- */
+
+.stamp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-condensed);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.72rem;
+  padding: 0.2rem 0.5rem;
+  border: 2px solid currentColor;
+  border-radius: var(--radius);
+  color: var(--grey-brown);
+  background: transparent;
+  transform: rotate(-2.5deg);
+  opacity: 0.92;
+  mix-blend-mode: multiply;
+}
+.stamp--fair {
+  color: var(--stamp-green-ink);
+  transform: rotate(-1.5deg);
+}
+.stamp--over,
+.stamp--trap {
+  color: var(--stamp-red-ink);
+  transform: rotate(2deg);
+}
+.stamp--trap {
+  transform: rotate(-3deg);
+  border-style: double;
+  border-width: 4px;
+}
+.stamp--unknown {
+  color: var(--grey-brown);
+  border-style: dashed;
+}
+.stamp--big {
+  font-size: 0.95rem;
+  padding: 0.35rem 0.8rem;
+}
+
+/* ---------- Cards / sections ---------- */
+
+.section {
+  padding: 3.5rem 0;
+  border-bottom: 1.5px solid var(--ink);
+}
+.section--tight {
+  padding: 2.25rem 0;
+}
+
+.eyebrow {
+  font-family: var(--font-condensed);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.78rem;
+  color: var(--stamp-red);
+  margin-bottom: 0.6rem;
+}
+
+.hero {
+  /* Fill the viewport below the nav — no more, no less — and centre the
+     content vertically. min-height (not height) lets tall content still grow
+     and scroll; svh keeps mobile browser chrome from causing overflow. */
+  min-height: calc(100svh - var(--nav-h));
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
+  /* Scoped to the hero banner only — every other surface stays flat.
+     Mint bottom stop ties back to the stamp-green "Fair" verdict colour. */
+  background: linear-gradient(180deg, #fbf7ee 0%, #e3f0e1 100%);
+}
+.hero__lead {
+  font-size: 1.1rem;
+  max-width: 38ch;
+  /* Greener muted tone — reads better on the mint tint than --grey-brown.
+     This override is hero-only; other muted text keeps #8b7e74. */
+  color: #5c6b58;
+}
+.hero__grid {
+  display: grid;
+  gap: 2.5rem;
+  align-items: center;
+}
+/* Below the two-column breakpoint the hero is headline + CTA only, so it fits
+   one screen. The receipt example returns on desktop and further down the page. */
+.hero__aside {
+  display: none;
+}
+@media (min-width: 1024px) {
+  .hero__aside {
+    display: block;
+  }
+}
+@media (min-width: 1024px) {
+  :root {
+    --nav-h: 4.25rem;
+  }
+  .hero__grid {
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 3rem;
+  }
+  .hero {
+    padding: 2.5rem 0;
+  }
+}
+
+.steps {
+  display: grid;
+  gap: 1.25rem;
+  counter-reset: step;
+}
+@media (min-width: 800px) {
+  .steps {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+  }
+}
+.step {
+  border: 1.5px solid var(--ink);
+  border-radius: var(--radius);
+  padding: 1.4rem 1.2rem;
+  background: var(--paper);
+}
+.step__num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  min-height: 2.1rem;
+  padding: 0 0.7rem;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  color: var(--stamp-red);
+  font-family: var(--font-condensed);
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+.step__num > span {
+  color: var(--ink);
+}
+.step h3 {
+  margin-bottom: 0.3rem;
+}
+.step p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+
+.feature-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+@media (min-width: 800px) {
+  .feature-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.feature {
+  border-left: 3px solid var(--stamp-red);
+  padding-left: 1rem;
+}
+.feature h3 {
+  margin-bottom: 0.25rem;
+}
+.feature p {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+}
+
+/* ---------- Disclosure note ---------- */
+
+.disclosure {
+  border: 1.5px dashed var(--grey-brown);
+  border-radius: var(--radius);
+  padding: 1rem 1.15rem;
+  background: color-mix(in srgb, var(--stamp-red) 5%, var(--paper));
+  font-size: 0.9rem;
+}
+.disclosure strong {
+  font-family: var(--font-condensed);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ---------- Footer ---------- */
+
+.footer {
+  padding: 2rem 0 2.5rem;
+  font-size: 0.85rem;
+  color: var(--grey-brown);
+}
+.footer__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.4rem;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer__links {
+  display: flex;
+  gap: 1.2rem;
+  font-family: var(--font-condensed);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.footer__note {
+  margin-top: 0.9rem;
+  padding-top: 0.9rem;
+  border-top: 1px dashed var(--hairline);
+}
+
+/* ---------- Scanner app ---------- */
+
+.scan {
+  padding: 2rem 0 4rem;
+}
+.scan__layout {
+  display: grid;
+  gap: 2rem;
+}
+@media (min-width: 1024px) {
+  .scan__layout {
+    grid-template-columns: 20rem 1fr;
+    align-items: start;
+  }
+}
+.panel {
+  border: 1.5px solid var(--ink);
+  border-radius: var(--radius);
+  background: var(--paper);
+  padding: 1.25rem;
+}
+.panel h2 {
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+}
+
+.sample-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.6rem;
+}
+.sample-list button {
+  width: 100%;
+  text-align: left;
+  border: 1.5px solid var(--hairline);
+  border-radius: var(--radius);
+  background: var(--bg-cream);
+  padding: 0.7rem 0.8rem;
+  cursor: pointer;
+  font: inherit;
+  transition: border-color 0.1s ease;
+}
+.sample-list button:hover,
+.sample-list button[aria-pressed="true"] {
+  border-color: var(--ink);
+}
+.sample-list .t {
+  font-family: var(--font-condensed);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+.sample-list .b {
+  font-size: 0.78rem;
+  color: var(--grey-brown);
+}
+
+.dropzone {
+  border: 2px dashed var(--grey-brown);
+  border-radius: var(--radius);
+  padding: 1.4rem 1rem;
+  text-align: center;
+  background: var(--bg-cream);
+}
+.dropzone p {
+  font-size: 0.85rem;
+  margin: 0.5rem 0 0;
+}
+
+.engine-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-condensed);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.78rem;
+  padding: 0.25rem 0.6rem;
+  border: 1.5px solid var(--ink);
+  border-radius: var(--radius);
+  background: var(--paper);
+}
+.engine-badge--ai {
+  border-color: var(--stamp-green-ink);
+  color: var(--stamp-green-ink);
+}
+.engine-badge--tesseract {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+.notice {
+  border: 1.5px solid var(--grey-brown);
+  border-left-width: 4px;
+  border-radius: var(--radius);
+  padding: 0.75rem 0.9rem;
+  background: var(--paper);
+  font-size: 0.86rem;
+  color: var(--ink-soft);
+}
+
+.progress {
+  font-family: var(--font-condensed);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.progress .bar {
+  flex: 1;
+  height: 8px;
+  border: 1.5px solid var(--ink);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.progress .bar span {
+  display: block;
+  height: 100%;
+  background: var(--ink);
+  transition: width 0.2s ease;
+}
+
+.summary-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  border: 1.5px solid var(--ink);
+  border-radius: var(--radius);
+  padding: 0.9rem 1.1rem;
+  background: var(--paper);
+  margin-bottom: 1.25rem;
+  font-family: var(--font-condensed);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.85rem;
+}
+.summary-strip b {
+  font-size: 1.15rem;
+}
+.summary-strip span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.popover {
+  position: relative;
+  display: inline-block;
+}
+.popover__panel {
+  position: absolute;
+  z-index: 20;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  width: min(20rem, 80vw);
+  border: 1.5px solid var(--ink);
+  border-radius: var(--radius);
+  background: var(--paper);
+  padding: 0.9rem 1rem;
+  box-shadow: var(--shadow-tape);
+  font-size: 0.85rem;
+}
+.popover__panel h4 {
+  font-family: var(--font-condensed);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 0.4rem;
+}
+
+.link-btn {
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--grey-brown);
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.stack > * + * {
+  margin-top: 1rem;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition-duration: 0.01ms !important;
+  }
+  .stamp {
+    transform: none;
+  }
+}

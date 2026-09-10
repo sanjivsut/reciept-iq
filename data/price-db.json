@@ -1,0 +1,463 @@
+{
+  "currency": "INR",
+  "_readme": "ILLUSTRATIVE DEFAULT DATA for the ReceiptIQ portfolio demo. Price ranges are approximate ballpark figures based on general market knowledge, NOT live-verified prices. Verify/update before treating this as production data. Each item's 'aliases' array should be expanded further to match how items commonly appear on OCR'd receipts (abbreviations, all-caps, misspellings).",
+  "categories": [
+    {
+      "name": "Groceries & Staples",
+      "items": [
+        {"name": "Aashirvaad Atta", "packSize": "5kg", "priceRange": {"min": 240, "max": 280}, "aliases": ["AASHIRVAAD ATTA 5KG"]},
+        {"name": "Aashirvaad Atta", "packSize": "10kg", "priceRange": {"min": 460, "max": 520}, "aliases": ["AASHIRVAAD ATTA 10KG"]},
+        {"name": "Fortune Sunflower Oil", "packSize": "1L", "priceRange": {"min": 140, "max": 170}, "aliases": ["FORTUNE SUNFLOWER OIL"]},
+        {"name": "Fortune Mustard Oil", "packSize": "1L", "priceRange": {"min": 150, "max": 180}, "aliases": ["FORTUNE MUSTARD OIL"]},
+        {"name": "India Gate Basmati Rice", "packSize": "1kg", "priceRange": {"min": 90, "max": 140}, "aliases": ["INDIA GATE RICE"]},
+        {"name": "Daawat Basmati Rice", "packSize": "5kg", "priceRange": {"min": 450, "max": 600}, "aliases": ["DAAWAT RICE 5KG"]},
+        {"name": "Tata Sampann Toor Dal", "packSize": "1kg", "priceRange": {"min": 140, "max": 170}, "aliases": ["TATA TOOR DAL"]},
+        {"name": "Tata Sampann Moong Dal", "packSize": "1kg", "priceRange": {"min": 130, "max": 160}, "aliases": ["TATA MOONG DAL"]},
+        {"name": "Tata Sampann Chana Dal", "packSize": "1kg", "priceRange": {"min": 90, "max": 110}, "aliases": ["TATA CHANA DAL"]},
+        {"name": "Masoor Dal", "packSize": "1kg", "priceRange": {"min": 90, "max": 120}, "aliases": ["MASOOR DAL"]},
+        {"name": "Tata Salt", "packSize": "1kg", "priceRange": {"min": 22, "max": 28}, "aliases": ["TATA SALT"]},
+        {"name": "Madhur Sugar", "packSize": "1kg", "priceRange": {"min": 42, "max": 50}, "aliases": ["MADHUR SUGAR"]},
+        {"name": "MDH Garam Masala", "packSize": "100g", "priceRange": {"min": 60, "max": 80}, "aliases": ["MDH GARAM MASALA"]},
+        {"name": "Everest Turmeric Powder", "packSize": "100g", "priceRange": {"min": 30, "max": 45}, "aliases": ["EVEREST HALDI"]},
+        {"name": "Everest Chilli Powder", "packSize": "100g", "priceRange": {"min": 45, "max": 60}, "aliases": ["EVEREST MIRCHI"]},
+        {"name": "Kissan Mixed Fruit Jam", "packSize": "500g", "priceRange": {"min": 140, "max": 170}, "aliases": ["KISSAN JAM"]},
+        {"name": "MTR Rava Idli Mix", "packSize": "500g", "priceRange": {"min": 90, "max": 120}, "aliases": ["MTR IDLI MIX"]},
+        {"name": "Saffola Gold Oil", "packSize": "1L", "priceRange": {"min": 170, "max": 200}, "aliases": ["SAFFOLA GOLD"]},
+        {"name": "Poha", "packSize": "500g", "priceRange": {"min": 40, "max": 60}, "aliases": ["POHA", "FLATTENED RICE"]},
+        {"name": "Sooji/Rava", "packSize": "1kg", "priceRange": {"min": 50, "max": 65}, "aliases": ["SOOJI", "RAVA"]},
+        {"name": "Besan", "packSize": "1kg", "priceRange": {"min": 90, "max": 120}, "aliases": ["BESAN", "GRAM FLOUR"]},
+        {"name": "Jeera (Cumin Seeds)", "packSize": "100g", "priceRange": {"min": 45, "max": 60}, "aliases": ["JEERA"]},
+        {"name": "Dhania Powder", "packSize": "100g", "priceRange": {"min": 35, "max": 50}, "aliases": ["DHANIA POWDER"]},
+        {"name": "Tamarind", "packSize": "250g", "priceRange": {"min": 30, "max": 45}, "aliases": ["IMLI", "TAMARIND"]},
+        {"name": "Jaggery (Gur)", "packSize": "1kg", "priceRange": {"min": 60, "max": 90}, "aliases": ["GUR", "JAGGERY"]}
+      ]
+    },
+    {
+      "name": "Fruits & Vegetables",
+      "items": [
+        {"name": "Banana", "packSize": "dozen", "priceRange": {"min": 40, "max": 60}, "aliases": ["BANANA"]},
+        {"name": "Apple (Shimla)", "packSize": "1kg", "priceRange": {"min": 150, "max": 220}, "aliases": ["APPLE"]},
+        {"name": "Onion", "packSize": "1kg", "priceRange": {"min": 25, "max": 45}, "aliases": ["ONION", "PYAZ"]},
+        {"name": "Potato", "packSize": "1kg", "priceRange": {"min": 20, "max": 35}, "aliases": ["POTATO", "ALOO"]},
+        {"name": "Tomato", "packSize": "1kg", "priceRange": {"min": 25, "max": 50}, "aliases": ["TOMATO"]},
+        {"name": "Green Chilli", "packSize": "250g", "priceRange": {"min": 15, "max": 25}, "aliases": ["GREEN CHILLI"]},
+        {"name": "Coriander Leaves", "packSize": "bunch", "priceRange": {"min": 10, "max": 20}, "aliases": ["CORIANDER", "DHANIA PATTA"]},
+        {"name": "Lemon", "packSize": "4 pcs", "priceRange": {"min": 10, "max": 20}, "aliases": ["LEMON", "NIMBU"]},
+        {"name": "Cucumber", "packSize": "1kg", "priceRange": {"min": 20, "max": 35}, "aliases": ["CUCUMBER"]},
+        {"name": "Cabbage", "packSize": "1 pc", "priceRange": {"min": 20, "max": 30}, "aliases": ["CABBAGE"]},
+        {"name": "Cauliflower", "packSize": "1 pc", "priceRange": {"min": 25, "max": 40}, "aliases": ["CAULIFLOWER", "GOBI"]},
+        {"name": "Capsicum", "packSize": "1kg", "priceRange": {"min": 40, "max": 70}, "aliases": ["CAPSICUM", "SHIMLA MIRCH"]},
+        {"name": "Carrot", "packSize": "1kg", "priceRange": {"min": 35, "max": 55}, "aliases": ["CARROT", "GAJAR"]},
+        {"name": "Spinach", "packSize": "bunch", "priceRange": {"min": 15, "max": 25}, "aliases": ["SPINACH", "PALAK"]},
+        {"name": "Ginger", "packSize": "250g", "priceRange": {"min": 20, "max": 35}, "aliases": ["GINGER", "ADRAK"]},
+        {"name": "Garlic", "packSize": "250g", "priceRange": {"min": 40, "max": 70}, "aliases": ["GARLIC", "LEHSUN"]},
+        {"name": "Mango (Alphonso, seasonal)", "packSize": "1kg", "priceRange": {"min": 100, "max": 250}, "aliases": ["MANGO", "AAM"]},
+        {"name": "Papaya", "packSize": "1kg", "priceRange": {"min": 25, "max": 40}, "aliases": ["PAPAYA"]},
+        {"name": "Pomegranate", "packSize": "1kg", "priceRange": {"min": 120, "max": 180}, "aliases": ["POMEGRANATE", "ANAAR"]},
+        {"name": "Grapes", "packSize": "1kg", "priceRange": {"min": 60, "max": 100}, "aliases": ["GRAPES"]},
+        {"name": "Orange/Mausambi", "packSize": "1kg", "priceRange": {"min": 60, "max": 100}, "aliases": ["ORANGE", "MAUSAMBI"]},
+        {"name": "Ladyfinger (Bhindi)", "packSize": "1kg", "priceRange": {"min": 30, "max": 50}, "aliases": ["BHINDI", "OKRA"]},
+        {"name": "Brinjal", "packSize": "1kg", "priceRange": {"min": 30, "max": 50}, "aliases": ["BRINJAL", "BAINGAN"]},
+        {"name": "Green Peas", "packSize": "1kg", "priceRange": {"min": 60, "max": 100}, "aliases": ["MATAR", "GREEN PEAS"]},
+        {"name": "Sweet Potato", "packSize": "1kg", "priceRange": {"min": 40, "max": 60}, "aliases": ["SWEET POTATO", "SHAKARKAND"]},
+        {"name": "Beetroot", "packSize": "1kg", "priceRange": {"min": 30, "max": 45}, "aliases": ["BEETROOT"]},
+        {"name": "Watermelon", "packSize": "1 pc (~4kg)", "priceRange": {"min": 60, "max": 120}, "aliases": ["WATERMELON", "TARBUJ"]}
+      ]
+    },
+    {
+      "name": "Dairy & Bakery",
+      "items": [
+        {"name": "Amul Milk (Toned)", "packSize": "500ml", "priceRange": {"min": 27, "max": 30}, "aliases": ["AMUL MILK"]},
+        {"name": "Amul Milk (Full Cream)", "packSize": "1L", "priceRange": {"min": 62, "max": 68}, "aliases": ["AMUL GOLD MILK"]},
+        {"name": "Mother Dairy Milk", "packSize": "500ml", "priceRange": {"min": 27, "max": 30}, "aliases": ["MOTHER DAIRY MILK"]},
+        {"name": "Amul Butter", "packSize": "100g", "priceRange": {"min": 55, "max": 62}, "aliases": ["AMUL BUTTER"]},
+        {"name": "Amul Cheese Slices", "packSize": "10 pcs", "priceRange": {"min": 110, "max": 140}, "aliases": ["AMUL CHEESE"]},
+        {"name": "Paneer", "packSize": "200g", "priceRange": {"min": 85, "max": 100}, "aliases": ["AMUL PANEER", "NESTLE PANEER"]},
+        {"name": "Amul Curd", "packSize": "400g", "priceRange": {"min": 35, "max": 45}, "aliases": ["AMUL DAHI"]},
+        {"name": "Britannia Bread", "packSize": "400g", "priceRange": {"min": 45, "max": 55}, "aliases": ["BRITANNIA BREAD"]},
+        {"name": "Eggs", "packSize": "6 pcs", "priceRange": {"min": 42, "max": 55}, "aliases": ["EGGS 6PC"]},
+        {"name": "Eggs", "packSize": "12 pcs", "priceRange": {"min": 78, "max": 95}, "aliases": ["EGGS 12PC", "EGG TRAY"]},
+        {"name": "Amul Ghee", "packSize": "500ml", "priceRange": {"min": 300, "max": 340}, "aliases": ["AMUL GHEE"]},
+        {"name": "Amul Kool Flavoured Milk", "packSize": "200ml", "priceRange": {"min": 20, "max": 25}, "aliases": ["AMUL KOOL"]},
+        {"name": "Condensed Milk (Milkmaid)", "packSize": "400g", "priceRange": {"min": 130, "max": 150}, "aliases": ["MILKMAID"]},
+        {"name": "Britannia Rusk", "packSize": "200g", "priceRange": {"min": 40, "max": 55}, "aliases": ["BRITANNIA RUSK"]},
+        {"name": "Amul Fresh Cream", "packSize": "200ml", "priceRange": {"min": 55, "max": 65}, "aliases": ["AMUL CREAM"]}
+      ]
+    },
+    {
+      "name": "Beverages",
+      "items": [
+        {"name": "Coca-Cola/Thums Up", "packSize": "750ml", "priceRange": {"min": 40, "max": 45}, "aliases": ["COKE 750ML", "THUMS UP 750ML"]},
+        {"name": "Coca-Cola/Thums Up", "packSize": "1.25L", "priceRange": {"min": 65, "max": 75}, "aliases": ["COKE 1.25L", "THUMS UP 1.25L"]},
+        {"name": "Frooti", "packSize": "200ml", "priceRange": {"min": 15, "max": 20}, "aliases": ["FROOTI"]},
+        {"name": "Maaza", "packSize": "600ml", "priceRange": {"min": 40, "max": 45}, "aliases": ["MAAZA"]},
+        {"name": "Real Fruit Juice", "packSize": "1L", "priceRange": {"min": 110, "max": 130}, "aliases": ["REAL JUICE"]},
+        {"name": "Tropicana", "packSize": "1L", "priceRange": {"min": 130, "max": 150}, "aliases": ["TROPICANA"]},
+        {"name": "Bisleri Water", "packSize": "1L", "priceRange": {"min": 20, "max": 25}, "aliases": ["BISLERI"]},
+        {"name": "Kinley Water", "packSize": "1L", "priceRange": {"min": 20, "max": 25}, "aliases": ["KINLEY"]},
+        {"name": "Tata Tea Premium", "packSize": "1kg", "priceRange": {"min": 480, "max": 540}, "aliases": ["TATA TEA"]},
+        {"name": "Red Label Tea", "packSize": "500g", "priceRange": {"min": 260, "max": 290}, "aliases": ["RED LABEL"]},
+        {"name": "Nescafe Classic", "packSize": "100g", "priceRange": {"min": 320, "max": 360}, "aliases": ["NESCAFE"]},
+        {"name": "Bru Instant Coffee", "packSize": "100g", "priceRange": {"min": 280, "max": 320}, "aliases": ["BRU COFFEE"]},
+        {"name": "Bournvita", "packSize": "500g", "priceRange": {"min": 240, "max": 270}, "aliases": ["BOURNVITA"]},
+        {"name": "Horlicks", "packSize": "500g", "priceRange": {"min": 240, "max": 270}, "aliases": ["HORLICKS"]},
+        {"name": "Sting Energy Drink", "packSize": "250ml", "priceRange": {"min": 20, "max": 25}, "aliases": ["STING"]},
+        {"name": "Amul Buttermilk", "packSize": "200ml", "priceRange": {"min": 12, "max": 15}, "aliases": ["AMUL CHAAS"]},
+        {"name": "Amul Lassi", "packSize": "200ml", "priceRange": {"min": 20, "max": 25}, "aliases": ["AMUL LASSI"]}
+      ]
+    },
+    {
+      "name": "Snacks & Packaged Foods",
+      "items": [
+        {"name": "Lay's Chips", "packSize": "52g", "priceRange": {"min": 20, "max": 25}, "aliases": ["LAYS CHIPS"]},
+        {"name": "Kurkure", "packSize": "90g", "priceRange": {"min": 20, "max": 25}, "aliases": ["KURKURE"]},
+        {"name": "Bingo Mad Angles", "packSize": "72g", "priceRange": {"min": 20, "max": 25}, "aliases": ["BINGO"]},
+        {"name": "Parle-G Biscuits", "packSize": "800g", "priceRange": {"min": 80, "max": 95}, "aliases": ["PARLE G"]},
+        {"name": "Britannia Marie Gold", "packSize": "250g", "priceRange": {"min": 40, "max": 50}, "aliases": ["MARIE GOLD"]},
+        {"name": "Good Day Biscuits", "packSize": "200g", "priceRange": {"min": 40, "max": 50}, "aliases": ["GOOD DAY"]},
+        {"name": "Maggi Noodles", "packSize": "4-pack", "priceRange": {"min": 56, "max": 60}, "aliases": ["MAGGI"]},
+        {"name": "Yippee Noodles", "packSize": "4-pack", "priceRange": {"min": 55, "max": 60}, "aliases": ["YIPPEE"]},
+        {"name": "Top Ramen", "packSize": "4-pack", "priceRange": {"min": 50, "max": 55}, "aliases": ["TOP RAMEN"]},
+        {"name": "Haldiram's Bhujia", "packSize": "200g", "priceRange": {"min": 55, "max": 70}, "aliases": ["HALDIRAM BHUJIA"]},
+        {"name": "Haldiram's Mixture", "packSize": "200g", "priceRange": {"min": 55, "max": 70}, "aliases": ["HALDIRAM MIXTURE"]},
+        {"name": "Sunfeast Dark Fantasy", "packSize": "300g", "priceRange": {"min": 90, "max": 110}, "aliases": ["DARK FANTASY"]},
+        {"name": "Cadbury Dairy Milk", "packSize": "55g", "priceRange": {"min": 40, "max": 45}, "aliases": ["DAIRY MILK"]},
+        {"name": "5 Star", "packSize": "45g", "priceRange": {"min": 20, "max": 25}, "aliases": ["5 STAR"]},
+        {"name": "Perk", "packSize": "30g", "priceRange": {"min": 10, "max": 12}, "aliases": ["PERK"]},
+        {"name": "Amul Chocolate Bar", "packSize": "40g", "priceRange": {"min": 25, "max": 30}, "aliases": ["AMUL CHOCOLATE"]},
+        {"name": "ACT II Popcorn", "packSize": "90g", "priceRange": {"min": 40, "max": 50}, "aliases": ["ACT II"]},
+        {"name": "Oreo", "packSize": "120g", "priceRange": {"min": 35, "max": 45}, "aliases": ["OREO"]},
+        {"name": "Bikaji Bhujia", "packSize": "200g", "priceRange": {"min": 55, "max": 70}, "aliases": ["BIKAJI BHUJIA"]},
+        {"name": "Happilo Almonds", "packSize": "200g", "priceRange": {"min": 200, "max": 250}, "aliases": ["HAPPILO ALMONDS"]},
+        {"name": "MTR Ready Meal", "packSize": "300g", "priceRange": {"min": 80, "max": 100}, "aliases": ["MTR READY MEAL"]}
+      ]
+    },
+    {
+      "name": "Personal Care & Beauty",
+      "items": [
+        {"name": "Colgate Toothpaste", "packSize": "200g", "priceRange": {"min": 90, "max": 110}, "aliases": ["COLGATE"]},
+        {"name": "Pepsodent Toothpaste", "packSize": "200g", "priceRange": {"min": 80, "max": 100}, "aliases": ["PEPSODENT"]},
+        {"name": "Sensodyne Toothpaste", "packSize": "100g", "priceRange": {"min": 130, "max": 160}, "aliases": ["SENSODYNE"]},
+        {"name": "Oral-B Toothbrush", "packSize": "1 pc", "priceRange": {"min": 40, "max": 70}, "aliases": ["ORAL B BRUSH"]},
+        {"name": "Dove Soap", "packSize": "100g", "priceRange": {"min": 55, "max": 65}, "aliases": ["DOVE SOAP"]},
+        {"name": "Lux Soap", "packSize": "100g", "priceRange": {"min": 30, "max": 40}, "aliases": ["LUX SOAP"]},
+        {"name": "Lifebuoy Soap", "packSize": "100g", "priceRange": {"min": 25, "max": 35}, "aliases": ["LIFEBUOY"]},
+        {"name": "Pears Soap", "packSize": "125g", "priceRange": {"min": 60, "max": 75}, "aliases": ["PEARS SOAP"]},
+        {"name": "Head & Shoulders Shampoo", "packSize": "340ml", "priceRange": {"min": 280, "max": 320}, "aliases": ["HEAD SHOULDERS"]},
+        {"name": "Clinic Plus Shampoo", "packSize": "340ml", "priceRange": {"min": 160, "max": 190}, "aliases": ["CLINIC PLUS"]},
+        {"name": "Sunsilk Shampoo", "packSize": "340ml", "priceRange": {"min": 170, "max": 200}, "aliases": ["SUNSILK"]},
+        {"name": "Nivea Body Lotion", "packSize": "200ml", "priceRange": {"min": 190, "max": 220}, "aliases": ["NIVEA LOTION"]},
+        {"name": "Vaseline Lotion", "packSize": "200ml", "priceRange": {"min": 150, "max": 180}, "aliases": ["VASELINE"]},
+        {"name": "Gillette Razor (disposable pack of 3)", "packSize": "3 pcs", "priceRange": {"min": 90, "max": 120}, "aliases": ["GILLETTE RAZOR"]},
+        {"name": "Gillette Shaving Cream", "packSize": "70g", "priceRange": {"min": 90, "max": 110}, "aliases": ["GILLETTE SHAVING CREAM"]},
+        {"name": "Park Avenue Deodorant", "packSize": "150ml", "priceRange": {"min": 180, "max": 220}, "aliases": ["PARK AVENUE"]},
+        {"name": "Wild Stone Deodorant", "packSize": "150ml", "priceRange": {"min": 150, "max": 190}, "aliases": ["WILD STONE"]},
+        {"name": "Patanjali Toothpaste", "packSize": "200g", "priceRange": {"min": 60, "max": 80}, "aliases": ["PATANJALI TOOTHPASTE"]},
+        {"name": "Himalaya Face Wash", "packSize": "100ml", "priceRange": {"min": 110, "max": 140}, "aliases": ["HIMALAYA FACE WASH"]},
+        {"name": "Lakme Kajal", "packSize": "1 pc", "priceRange": {"min": 90, "max": 120}, "aliases": ["LAKME KAJAL"]},
+        {"name": "Maybelline Lipstick", "packSize": "1 pc", "priceRange": {"min": 350, "max": 500}, "aliases": ["MAYBELLINE LIPSTICK"]},
+        {"name": "Dabur Red Toothpaste", "packSize": "200g", "priceRange": {"min": 85, "max": 105}, "aliases": ["DABUR RED"]},
+        {"name": "Whisper Sanitary Pads", "packSize": "pack", "priceRange": {"min": 90, "max": 130}, "aliases": ["WHISPER"]},
+        {"name": "Stayfree Sanitary Pads", "packSize": "pack", "priceRange": {"min": 80, "max": 120}, "aliases": ["STAYFREE"]},
+        {"name": "Garnier Hair Colour", "packSize": "1 pc", "priceRange": {"min": 90, "max": 130}, "aliases": ["GARNIER HAIR COLOUR"]},
+        {"name": "Ponds Talcum Powder", "packSize": "400g", "priceRange": {"min": 190, "max": 220}, "aliases": ["PONDS TALC"]},
+        {"name": "Dermicool Prickly Heat Powder", "packSize": "150g", "priceRange": {"min": 90, "max": 110}, "aliases": ["DERMICOOL"]},
+        {"name": "Himalaya Men Face Wash", "packSize": "100ml", "priceRange": {"min": 110, "max": 140}, "aliases": ["HIMALAYA MEN FACE WASH"]}
+      ]
+    },
+    {
+      "name": "Health & Wellness / Pharmacy",
+      "items": [
+        {"name": "Crocin 500mg", "packSize": "strip of 15", "priceRange": {"min": 25, "max": 35}, "aliases": ["CROCIN"]},
+        {"name": "Dolo 650", "packSize": "strip of 15", "priceRange": {"min": 30, "max": 40}, "aliases": ["DOLO 650"]},
+        {"name": "Combiflam", "packSize": "strip of 20", "priceRange": {"min": 40, "max": 55}, "aliases": ["COMBIFLAM"]},
+        {"name": "Electral ORS", "packSize": "1 sachet", "priceRange": {"min": 15, "max": 20}, "aliases": ["ELECTRAL"]},
+        {"name": "Digene Tablets", "packSize": "strip", "priceRange": {"min": 25, "max": 35}, "aliases": ["DIGENE"]},
+        {"name": "Eno Sachet", "packSize": "5 pcs", "priceRange": {"min": 30, "max": 40}, "aliases": ["ENO"]},
+        {"name": "Benadryl Cough Syrup", "packSize": "100ml", "priceRange": {"min": 90, "max": 110}, "aliases": ["BENADRYL"]},
+        {"name": "Vicks Cough Syrup", "packSize": "100ml", "priceRange": {"min": 90, "max": 120}, "aliases": ["VICKS SYRUP"]},
+        {"name": "Vicks VapoRub", "packSize": "25g", "priceRange": {"min": 90, "max": 110}, "aliases": ["VAPORUB"]},
+        {"name": "Vicks Inhaler", "packSize": "1 pc", "priceRange": {"min": 40, "max": 55}, "aliases": ["VICKS INHALER"]},
+        {"name": "Dettol Antiseptic Liquid", "packSize": "125ml", "priceRange": {"min": 70, "max": 90}, "aliases": ["DETTOL"]},
+        {"name": "Savlon Antiseptic Liquid", "packSize": "100ml", "priceRange": {"min": 65, "max": 85}, "aliases": ["SAVLON"]},
+        {"name": "Band-Aid", "packSize": "pack", "priceRange": {"min": 40, "max": 60}, "aliases": ["BANDAID", "J&J BANDAGE"]},
+        {"name": "Cotton Roll", "packSize": "100g", "priceRange": {"min": 40, "max": 55}, "aliases": ["COTTON ROLL"]},
+        {"name": "Revital H", "packSize": "30 caps", "priceRange": {"min": 250, "max": 300}, "aliases": ["REVITAL"]},
+        {"name": "Zincovit", "packSize": "15 tabs", "priceRange": {"min": 60, "max": 80}, "aliases": ["ZINCOVIT"]},
+        {"name": "Hand Sanitizer", "packSize": "100ml", "priceRange": {"min": 60, "max": 90}, "aliases": ["SANITIZER"]},
+        {"name": "Digital Thermometer", "packSize": "1 pc", "priceRange": {"min": 100, "max": 180}, "aliases": ["THERMOMETER"]},
+        {"name": "Volini Spray", "packSize": "100g", "priceRange": {"min": 190, "max": 220}, "aliases": ["VOLINI"]},
+        {"name": "Moov Cream", "packSize": "50g", "priceRange": {"min": 90, "max": 110}, "aliases": ["MOOV"]},
+        {"name": "Betadine Solution", "packSize": "100ml", "priceRange": {"min": 90, "max": 110}, "aliases": ["BETADINE"]},
+        {"name": "Glucon-D", "packSize": "200g", "priceRange": {"min": 90, "max": 110}, "aliases": ["GLUCON D"]},
+        {"name": "Protein Powder (basic)", "packSize": "500g", "priceRange": {"min": 400, "max": 600}, "aliases": ["PROTEIN POWDER"]}
+      ]
+    },
+    {
+      "name": "Home Care & Cleaning",
+      "items": [
+        {"name": "Surf Excel Detergent", "packSize": "1kg", "priceRange": {"min": 130, "max": 150}, "aliases": ["SURF EXCEL"]},
+        {"name": "Ariel Detergent", "packSize": "1kg", "priceRange": {"min": 140, "max": 165}, "aliases": ["ARIEL"]},
+        {"name": "Tide Detergent", "packSize": "1kg", "priceRange": {"min": 110, "max": 135}, "aliases": ["TIDE"]},
+        {"name": "Vim Dishwash Bar", "packSize": "pack of 3", "priceRange": {"min": 30, "max": 40}, "aliases": ["VIM BAR"]},
+        {"name": "Vim Dishwash Liquid", "packSize": "500ml", "priceRange": {"min": 100, "max": 120}, "aliases": ["VIM LIQUID"]},
+        {"name": "Exo Dishwash Bar", "packSize": "pack of 3", "priceRange": {"min": 25, "max": 35}, "aliases": ["EXO BAR"]},
+        {"name": "Harpic Toilet Cleaner", "packSize": "500ml", "priceRange": {"min": 90, "max": 110}, "aliases": ["HARPIC"]},
+        {"name": "Domex Toilet Cleaner", "packSize": "500ml", "priceRange": {"min": 85, "max": 105}, "aliases": ["DOMEX"]},
+        {"name": "Colin Glass Cleaner", "packSize": "500ml", "priceRange": {"min": 90, "max": 110}, "aliases": ["COLIN"]},
+        {"name": "Lizol Floor Cleaner", "packSize": "500ml", "priceRange": {"min": 130, "max": 160}, "aliases": ["LIZOL"]},
+        {"name": "Good Knight Mosquito Refill", "packSize": "1 pc", "priceRange": {"min": 55, "max": 70}, "aliases": ["GOOD KNIGHT"]},
+        {"name": "All Out Mosquito Refill", "packSize": "1 pc", "priceRange": {"min": 55, "max": 70}, "aliases": ["ALL OUT"]},
+        {"name": "Comfort Fabric Softener", "packSize": "200ml", "priceRange": {"min": 60, "max": 80}, "aliases": ["COMFORT"]},
+        {"name": "Garbage Bags", "packSize": "30 pcs medium", "priceRange": {"min": 90, "max": 130}, "aliases": ["GARBAGE BAGS"]},
+        {"name": "Phenyl", "packSize": "500ml", "priceRange": {"min": 40, "max": 60}, "aliases": ["PHENYL"]},
+        {"name": "Godrej Aer Room Freshener", "packSize": "1 pc", "priceRange": {"min": 150, "max": 200}, "aliases": ["GODREJ AER"]},
+        {"name": "Broom (Jhadu)", "packSize": "1 pc", "priceRange": {"min": 60, "max": 100}, "aliases": ["BROOM", "JHADU"]},
+        {"name": "Mop", "packSize": "1 pc", "priceRange": {"min": 150, "max": 300}, "aliases": ["MOP"]},
+        {"name": "Steel Scrubber", "packSize": "pack of 3", "priceRange": {"min": 20, "max": 30}, "aliases": ["SCRUBBER"]},
+        {"name": "Aluminium Foil", "packSize": "8m", "priceRange": {"min": 60, "max": 90}, "aliases": ["ALUMINIUM FOIL"]},
+        {"name": "Cling Wrap", "packSize": "20m", "priceRange": {"min": 60, "max": 90}, "aliases": ["CLING WRAP"]}
+      ]
+    },
+    {
+      "name": "Mobiles & Electronics",
+      "items": [
+        {"name": "Budget Smartphone (Redmi)", "packSize": "1 pc", "priceRange": {"min": 8000, "max": 15000}, "aliases": ["REDMI PHONE"]},
+        {"name": "Mid-range Smartphone (Realme)", "packSize": "1 pc", "priceRange": {"min": 12000, "max": 20000}, "aliases": ["REALME PHONE"]},
+        {"name": "Samsung M-series Smartphone", "packSize": "1 pc", "priceRange": {"min": 13000, "max": 22000}, "aliases": ["SAMSUNG M SERIES"]},
+        {"name": "boAt Wired Earphones", "packSize": "1 pc", "priceRange": {"min": 300, "max": 600}, "aliases": ["BOAT EARPHONES"]},
+        {"name": "boAt TWS Earbuds", "packSize": "1 pc", "priceRange": {"min": 1000, "max": 2500}, "aliases": ["BOAT TWS"]},
+        {"name": "Noise TWS Earbuds", "packSize": "1 pc", "priceRange": {"min": 1200, "max": 2500}, "aliases": ["NOISE TWS"]},
+        {"name": "Mobile Charger (Original, 20W)", "packSize": "1 pc", "priceRange": {"min": 800, "max": 1500}, "aliases": ["ORIGINAL CHARGER"]},
+        {"name": "Mobile Charger (Compatible)", "packSize": "1 pc", "priceRange": {"min": 200, "max": 500}, "aliases": ["COMPATIBLE CHARGER"]},
+        {"name": "USB Cable", "packSize": "1 pc", "priceRange": {"min": 150, "max": 400}, "aliases": ["USB CABLE"]},
+        {"name": "Power Bank (10000mAh)", "packSize": "1 pc", "priceRange": {"min": 800, "max": 1500}, "aliases": ["POWER BANK"]},
+        {"name": "Memory Card 32GB", "packSize": "1 pc", "priceRange": {"min": 300, "max": 500}, "aliases": ["MEMORY CARD"]},
+        {"name": "Screen Guard", "packSize": "1 pc", "priceRange": {"min": 100, "max": 300}, "aliases": ["SCREEN GUARD"]},
+        {"name": "Phone Cover/Case", "packSize": "1 pc", "priceRange": {"min": 150, "max": 500}, "aliases": ["PHONE COVER"]},
+        {"name": "boAt Bluetooth Speaker (entry)", "packSize": "1 pc", "priceRange": {"min": 800, "max": 1800}, "aliases": ["BOAT SPEAKER"]},
+        {"name": "JBL Bluetooth Speaker (entry)", "packSize": "1 pc", "priceRange": {"min": 1500, "max": 3000}, "aliases": ["JBL SPEAKER"]},
+        {"name": "Extension Board (4-socket)", "packSize": "1 pc", "priceRange": {"min": 300, "max": 600}, "aliases": ["EXTENSION BOARD"]},
+        {"name": "LED Bulb 9W", "packSize": "1 pc", "priceRange": {"min": 80, "max": 150}, "aliases": ["LED BULB"]},
+        {"name": "Basic Calculator", "packSize": "1 pc", "priceRange": {"min": 100, "max": 250}, "aliases": ["CALCULATOR"]}
+      ]
+    },
+    {
+      "name": "Home Appliances",
+      "items": [
+        {"name": "Mixer Grinder (Preethi/Bajaj)", "packSize": "1 pc", "priceRange": {"min": 2500, "max": 4500}, "aliases": ["MIXER GRINDER"]},
+        {"name": "Electric Kettle 1.5L", "packSize": "1 pc", "priceRange": {"min": 700, "max": 1200}, "aliases": ["ELECTRIC KETTLE"]},
+        {"name": "Iron/Press (Bajaj/Philips)", "packSize": "1 pc", "priceRange": {"min": 700, "max": 1200}, "aliases": ["IRON PRESS"]},
+        {"name": "Table Fan", "packSize": "1 pc", "priceRange": {"min": 1200, "max": 2000}, "aliases": ["TABLE FAN"]},
+        {"name": "Ceiling Fan", "packSize": "1 pc", "priceRange": {"min": 1500, "max": 2800}, "aliases": ["CEILING FAN"]},
+        {"name": "Water Purifier (Kent/Aquaguard)", "packSize": "1 pc", "priceRange": {"min": 8000, "max": 15000}, "aliases": ["WATER PURIFIER"]},
+        {"name": "Induction Cooktop", "packSize": "1 pc", "priceRange": {"min": 1500, "max": 2500}, "aliases": ["INDUCTION COOKTOP"]},
+        {"name": "Toaster", "packSize": "1 pc", "priceRange": {"min": 1000, "max": 2000}, "aliases": ["TOASTER"]},
+        {"name": "Room Heater", "packSize": "1 pc", "priceRange": {"min": 1200, "max": 2500}, "aliases": ["ROOM HEATER"]},
+        {"name": "Home Inverter/UPS (basic)", "packSize": "1 pc", "priceRange": {"min": 6000, "max": 10000}, "aliases": ["INVERTER"]},
+        {"name": "Rice Cooker", "packSize": "1 pc", "priceRange": {"min": 1200, "max": 2200}, "aliases": ["RICE COOKER"]},
+        {"name": "Hair Dryer", "packSize": "1 pc", "priceRange": {"min": 600, "max": 1200}, "aliases": ["HAIR DRYER"]},
+        {"name": "Trimmer", "packSize": "1 pc", "priceRange": {"min": 500, "max": 1000}, "aliases": ["TRIMMER"]}
+      ]
+    },
+    {
+      "name": "Fashion & Apparel",
+      "items": [
+        {"name": "Cotton T-Shirt (basic brand)", "packSize": "1 pc", "priceRange": {"min": 300, "max": 700}, "aliases": ["T-SHIRT"]},
+        {"name": "Formal Shirt", "packSize": "1 pc", "priceRange": {"min": 600, "max": 1200}, "aliases": ["FORMAL SHIRT"]},
+        {"name": "Jeans (Levi's/Pepe)", "packSize": "1 pc", "priceRange": {"min": 1200, "max": 2500}, "aliases": ["JEANS"]},
+        {"name": "Kurta (men's cotton)", "packSize": "1 pc", "priceRange": {"min": 500, "max": 1000}, "aliases": ["KURTA"]},
+        {"name": "Kurti (women's)", "packSize": "1 pc", "priceRange": {"min": 400, "max": 900}, "aliases": ["KURTI"]},
+        {"name": "Saree (everyday)", "packSize": "1 pc", "priceRange": {"min": 500, "max": 1500}, "aliases": ["SAREE"]},
+        {"name": "Innerwear (Jockey, pack of 2)", "packSize": "pack of 2", "priceRange": {"min": 400, "max": 700}, "aliases": ["JOCKEY INNERWEAR"]},
+        {"name": "Socks (pack of 3)", "packSize": "pack of 3", "priceRange": {"min": 150, "max": 300}, "aliases": ["SOCKS"]},
+        {"name": "School Uniform Set", "packSize": "1 set", "priceRange": {"min": 500, "max": 1200}, "aliases": ["SCHOOL UNIFORM"]},
+        {"name": "Track Pants/Joggers", "packSize": "1 pc", "priceRange": {"min": 500, "max": 1000}, "aliases": ["TRACK PANTS", "JOGGERS"]},
+        {"name": "Dupatta", "packSize": "1 pc", "priceRange": {"min": 200, "max": 500}, "aliases": ["DUPATTA"]}
+      ]
+    },
+    {
+      "name": "Footwear",
+      "items": [
+        {"name": "Slippers (Bata/Relaxo)", "packSize": "1 pair", "priceRange": {"min": 200, "max": 500}, "aliases": ["SLIPPERS"]},
+        {"name": "Sports Shoes (Sparx/Campus)", "packSize": "1 pair", "priceRange": {"min": 800, "max": 1800}, "aliases": ["SPORTS SHOES"]},
+        {"name": "Formal Shoes", "packSize": "1 pair", "priceRange": {"min": 1200, "max": 2500}, "aliases": ["FORMAL SHOES"]},
+        {"name": "School Shoes", "packSize": "1 pair", "priceRange": {"min": 400, "max": 800}, "aliases": ["SCHOOL SHOES"]},
+        {"name": "Flip-Flops", "packSize": "1 pair", "priceRange": {"min": 150, "max": 350}, "aliases": ["FLIP FLOPS", "CHAPPAL"]},
+        {"name": "Ladies Sandals (Bata/Metro)", "packSize": "1 pair", "priceRange": {"min": 500, "max": 1200}, "aliases": ["LADIES SANDALS"]},
+        {"name": "Kids Footwear", "packSize": "1 pair", "priceRange": {"min": 300, "max": 700}, "aliases": ["KIDS FOOTWEAR"]}
+      ]
+    },
+    {
+      "name": "Furniture & Home Decor",
+      "items": [
+        {"name": "Plastic Chair (Nilkamal/Supreme)", "packSize": "1 pc", "priceRange": {"min": 600, "max": 1200}, "aliases": ["PLASTIC CHAIR"]},
+        {"name": "Study Table", "packSize": "1 pc", "priceRange": {"min": 2500, "max": 6000}, "aliases": ["STUDY TABLE"]},
+        {"name": "Bookshelf", "packSize": "1 pc", "priceRange": {"min": 2000, "max": 5000}, "aliases": ["BOOKSHELF"]},
+        {"name": "Mattress (entry, single)", "packSize": "1 pc", "priceRange": {"min": 4000, "max": 8000}, "aliases": ["MATTRESS"]},
+        {"name": "Bedsheet Set", "packSize": "1 set", "priceRange": {"min": 500, "max": 1200}, "aliases": ["BEDSHEET"]},
+        {"name": "Pillow", "packSize": "1 pc", "priceRange": {"min": 200, "max": 500}, "aliases": ["PILLOW"]},
+        {"name": "Curtains (pair)", "packSize": "1 pair", "priceRange": {"min": 500, "max": 1200}, "aliases": ["CURTAINS"]},
+        {"name": "Wall Clock", "packSize": "1 pc", "priceRange": {"min": 300, "max": 800}, "aliases": ["WALL CLOCK"]},
+        {"name": "Photo Frame", "packSize": "1 pc", "priceRange": {"min": 150, "max": 400}, "aliases": ["PHOTO FRAME"]},
+        {"name": "Storage Box/Trunk", "packSize": "1 pc", "priceRange": {"min": 500, "max": 1200}, "aliases": ["STORAGE BOX"]},
+        {"name": "Plastic Stool", "packSize": "1 pc", "priceRange": {"min": 200, "max": 400}, "aliases": ["PLASTIC STOOL"]}
+      ]
+    },
+    {
+      "name": "Kitchenware & Utensils",
+      "items": [
+        {"name": "Pressure Cooker (Prestige/Hawkins, 5L)", "packSize": "1 pc", "priceRange": {"min": 1200, "max": 2000}, "aliases": ["PRESSURE COOKER"]},
+        {"name": "Non-stick Tawa", "packSize": "1 pc", "priceRange": {"min": 400, "max": 800}, "aliases": ["TAWA"]},
+        {"name": "Non-stick Kadai", "packSize": "1 pc", "priceRange": {"min": 600, "max": 1200}, "aliases": ["KADAI"]},
+        {"name": "Steel Utensil Set", "packSize": "1 set", "priceRange": {"min": 1500, "max": 3000}, "aliases": ["STEEL UTENSILS"]},
+        {"name": "Water Bottle (Milton/Cello)", "packSize": "1 pc", "priceRange": {"min": 200, "max": 500}, "aliases": ["WATER BOTTLE"]},
+        {"name": "Lunch Box/Tiffin", "packSize": "1 pc", "priceRange": {"min": 300, "max": 700}, "aliases": ["TIFFIN BOX"]},
+        {"name": "Glassware Set (6 pcs)", "packSize": "set of 6", "priceRange": {"min": 300, "max": 600}, "aliases": ["GLASSWARE SET"]},
+        {"name": "Cutting Board", "packSize": "1 pc", "priceRange": {"min": 150, "max": 350}, "aliases": ["CUTTING BOARD"]},
+        {"name": "Kitchen Knife Set", "packSize": "1 set", "priceRange": {"min": 300, "max": 800}, "aliases": ["KNIFE SET"]},
+        {"name": "Spice Box (Masala Dabba)", "packSize": "1 pc", "priceRange": {"min": 200, "max": 500}, "aliases": ["MASALA DABBA"]},
+        {"name": "Thermos Flask", "packSize": "1 pc", "priceRange": {"min": 400, "max": 900}, "aliases": ["THERMOS"]},
+        {"name": "Plastic Storage Containers (set)", "packSize": "1 set", "priceRange": {"min": 400, "max": 900}, "aliases": ["STORAGE CONTAINERS"]}
+      ]
+    },
+    {
+      "name": "Baby Care & Products",
+      "items": [
+        {"name": "Pampers Diapers (Medium)", "packSize": "pack of 44", "priceRange": {"min": 500, "max": 700}, "aliases": ["PAMPERS"]},
+        {"name": "Huggies Diapers (Medium)", "packSize": "pack of 40", "priceRange": {"min": 480, "max": 680}, "aliases": ["HUGGIES"]},
+        {"name": "Baby Wipes (Himalaya)", "packSize": "80 pcs", "priceRange": {"min": 130, "max": 160}, "aliases": ["BABY WIPES"]},
+        {"name": "Johnson's Baby Powder", "packSize": "200g", "priceRange": {"min": 150, "max": 180}, "aliases": ["JOHNSONS POWDER"]},
+        {"name": "Johnson's Baby Oil", "packSize": "200ml", "priceRange": {"min": 180, "max": 220}, "aliases": ["JOHNSONS OIL"]},
+        {"name": "Himalaya Baby Soap", "packSize": "1 pc", "priceRange": {"min": 50, "max": 70}, "aliases": ["BABY SOAP"]},
+        {"name": "Feeding Bottle", "packSize": "1 pc", "priceRange": {"min": 200, "max": 500}, "aliases": ["FEEDING BOTTLE"]},
+        {"name": "Cerelac Baby Food", "packSize": "300g", "priceRange": {"min": 220, "max": 260}, "aliases": ["CERELAC"]},
+        {"name": "Farex Baby Food", "packSize": "400g", "priceRange": {"min": 250, "max": 300}, "aliases": ["FAREX"]},
+        {"name": "Himalaya Baby Shampoo", "packSize": "200ml", "priceRange": {"min": 180, "max": 220}, "aliases": ["BABY SHAMPOO"]},
+        {"name": "Baby Lotion", "packSize": "200ml", "priceRange": {"min": 180, "max": 220}, "aliases": ["BABY LOTION"]},
+        {"name": "Cloth Diapers (pack of 5)", "packSize": "pack of 5", "priceRange": {"min": 400, "max": 700}, "aliases": ["CLOTH DIAPERS"]},
+        {"name": "Pacifier", "packSize": "1 pc", "priceRange": {"min": 100, "max": 250}, "aliases": ["PACIFIER"]}
+      ]
+    },
+    {
+      "name": "Books, Stationery & Office Supplies",
+      "items": [
+        {"name": "Classmate Notebook (172 pages)", "packSize": "1 pc", "priceRange": {"min": 40, "max": 60}, "aliases": ["CLASSMATE NOTEBOOK"]},
+        {"name": "Navneet Notebook", "packSize": "1 pc", "priceRange": {"min": 35, "max": 55}, "aliases": ["NAVNEET NOTEBOOK"]},
+        {"name": "Reynolds Pen (pack of 5)", "packSize": "pack of 5", "priceRange": {"min": 40, "max": 60}, "aliases": ["REYNOLDS PEN"]},
+        {"name": "Cello Pen (pack of 5)", "packSize": "pack of 5", "priceRange": {"min": 40, "max": 60}, "aliases": ["CELLO PEN"]},
+        {"name": "Apsara Pencil (pack of 10)", "packSize": "pack of 10", "priceRange": {"min": 40, "max": 60}, "aliases": ["APSARA PENCIL"]},
+        {"name": "Geometry Box", "packSize": "1 pc", "priceRange": {"min": 80, "max": 150}, "aliases": ["GEOMETRY BOX"]},
+        {"name": "School Bag", "packSize": "1 pc", "priceRange": {"min": 500, "max": 1500}, "aliases": ["SCHOOL BAG"]},
+        {"name": "A4 Paper Ream (500 sheets)", "packSize": "1 ream", "priceRange": {"min": 250, "max": 320}, "aliases": ["A4 PAPER"]},
+        {"name": "Files/Folders (pack of 5)", "packSize": "pack of 5", "priceRange": {"min": 100, "max": 200}, "aliases": ["FILES FOLDERS"]},
+        {"name": "Camlin Sketch Pens (set)", "packSize": "1 set", "priceRange": {"min": 50, "max": 90}, "aliases": ["SKETCH PENS"]},
+        {"name": "Camlin Crayons (set)", "packSize": "1 set", "priceRange": {"min": 40, "max": 80}, "aliases": ["CRAYONS"]},
+        {"name": "Glue Stick", "packSize": "1 pc", "priceRange": {"min": 20, "max": 40}, "aliases": ["GLUE STICK"]},
+        {"name": "Stapler", "packSize": "1 pc", "priceRange": {"min": 60, "max": 120}, "aliases": ["STAPLER"]},
+        {"name": "NCERT Textbook", "packSize": "1 pc", "priceRange": {"min": 40, "max": 150}, "aliases": ["NCERT BOOK"]}
+      ]
+    },
+    {
+      "name": "Sports, Fitness & Outdoor",
+      "items": [
+        {"name": "SG Cricket Bat (entry)", "packSize": "1 pc", "priceRange": {"min": 800, "max": 2000}, "aliases": ["CRICKET BAT"]},
+        {"name": "Cricket Ball (SG/Cosco)", "packSize": "1 pc", "priceRange": {"min": 100, "max": 300}, "aliases": ["CRICKET BALL"]},
+        {"name": "Badminton Racket (Yonex entry)", "packSize": "1 pc", "priceRange": {"min": 500, "max": 1200}, "aliases": ["BADMINTON RACKET"]},
+        {"name": "Shuttlecock (tube of 10)", "packSize": "tube of 10", "priceRange": {"min": 300, "max": 600}, "aliases": ["SHUTTLECOCK"]},
+        {"name": "Football (Nivia/Cosco)", "packSize": "1 pc", "priceRange": {"min": 500, "max": 1200}, "aliases": ["FOOTBALL"]},
+        {"name": "Yoga Mat", "packSize": "1 pc", "priceRange": {"min": 300, "max": 800}, "aliases": ["YOGA MAT"]},
+        {"name": "Skipping Rope", "packSize": "1 pc", "priceRange": {"min": 100, "max": 250}, "aliases": ["SKIPPING ROPE"]},
+        {"name": "Dumbbells (basic set, pair)", "packSize": "1 pair", "priceRange": {"min": 500, "max": 1200}, "aliases": ["DUMBBELLS"]},
+        {"name": "Gym Gloves", "packSize": "1 pair", "priceRange": {"min": 200, "max": 400}, "aliases": ["GYM GLOVES"]},
+        {"name": "Cycling Helmet", "packSize": "1 pc", "priceRange": {"min": 500, "max": 1200}, "aliases": ["CYCLING HELMET"]},
+        {"name": "Sports Water Bottle", "packSize": "1 pc", "priceRange": {"min": 200, "max": 400}, "aliases": ["SPORTS BOTTLE"]},
+        {"name": "Track Suit", "packSize": "1 pc", "priceRange": {"min": 700, "max": 1500}, "aliases": ["TRACK SUIT"]}
+      ]
+    },
+    {
+      "name": "Automotive Accessories",
+      "items": [
+        {"name": "Engine Oil (2-wheeler, 900ml)", "packSize": "900ml", "priceRange": {"min": 300, "max": 450}, "aliases": ["2 WHEELER OIL"]},
+        {"name": "Engine Oil (car, 1L)", "packSize": "1L", "priceRange": {"min": 400, "max": 600}, "aliases": ["CAR ENGINE OIL"]},
+        {"name": "Car Phone Mount", "packSize": "1 pc", "priceRange": {"min": 200, "max": 500}, "aliases": ["PHONE MOUNT"]},
+        {"name": "Seat Covers (set)", "packSize": "1 set", "priceRange": {"min": 1500, "max": 3500}, "aliases": ["SEAT COVERS"]},
+        {"name": "Helmet (Steelbird/Vega)", "packSize": "1 pc", "priceRange": {"min": 800, "max": 2000}, "aliases": ["HELMET"]},
+        {"name": "Car Air Freshener", "packSize": "1 pc", "priceRange": {"min": 100, "max": 250}, "aliases": ["CAR FRESHENER"]},
+        {"name": "Wiper Blades (pair)", "packSize": "1 pair", "priceRange": {"min": 300, "max": 700}, "aliases": ["WIPER BLADES"]},
+        {"name": "Tyre Inflator", "packSize": "1 pc", "priceRange": {"min": 800, "max": 1800}, "aliases": ["TYRE INFLATOR"]},
+        {"name": "Microfiber Cleaning Kit", "packSize": "1 kit", "priceRange": {"min": 300, "max": 600}, "aliases": ["CLEANING KIT"]},
+        {"name": "Jumper Cable", "packSize": "1 pc", "priceRange": {"min": 500, "max": 1000}, "aliases": ["JUMPER CABLE"]},
+        {"name": "Basic Tool Kit", "packSize": "1 kit", "priceRange": {"min": 500, "max": 1200}, "aliases": ["TOOL KIT"]}
+      ]
+    },
+    {
+      "name": "Pet Supplies",
+      "items": [
+        {"name": "Pedigree Dry Dog Food", "packSize": "3kg", "priceRange": {"min": 700, "max": 900}, "aliases": ["PEDIGREE"]},
+        {"name": "Whiskas Cat Food", "packSize": "1.2kg", "priceRange": {"min": 400, "max": 550}, "aliases": ["WHISKAS"]},
+        {"name": "Pet Shampoo", "packSize": "1 pc", "priceRange": {"min": 250, "max": 450}, "aliases": ["PET SHAMPOO"]},
+        {"name": "Leash & Collar Set", "packSize": "1 set", "priceRange": {"min": 300, "max": 700}, "aliases": ["LEASH COLLAR"]},
+        {"name": "Pet Bed", "packSize": "1 pc", "priceRange": {"min": 700, "max": 1500}, "aliases": ["PET BED"]},
+        {"name": "Cat Litter", "packSize": "5kg", "priceRange": {"min": 400, "max": 600}, "aliases": ["CAT LITTER"]},
+        {"name": "Chew Toys", "packSize": "1 pc", "priceRange": {"min": 150, "max": 400}, "aliases": ["CHEW TOYS"]},
+        {"name": "Pet Grooming Brush", "packSize": "1 pc", "priceRange": {"min": 200, "max": 400}, "aliases": ["GROOMING BRUSH"]}
+      ]
+    },
+    {
+      "name": "Dining / Restaurant Menu Items",
+      "items": [
+        {"name": "Regular Thali (veg)", "packSize": "1 plate", "priceRange": {"min": 120, "max": 220}, "aliases": ["VEG THALI"]},
+        {"name": "Regular Thali (non-veg)", "packSize": "1 plate", "priceRange": {"min": 180, "max": 320}, "aliases": ["NON VEG THALI"]},
+        {"name": "Masala Dosa", "packSize": "1 plate", "priceRange": {"min": 60, "max": 120}, "aliases": ["MASALA DOSA"]},
+        {"name": "Idli-Sambar", "packSize": "1 plate", "priceRange": {"min": 50, "max": 90}, "aliases": ["IDLI SAMBAR"]},
+        {"name": "Butter Chicken", "packSize": "1 plate", "priceRange": {"min": 250, "max": 400}, "aliases": ["BUTTER CHICKEN"]},
+        {"name": "Paneer Butter Masala", "packSize": "1 plate", "priceRange": {"min": 200, "max": 350}, "aliases": ["PANEER BUTTER MASALA"]},
+        {"name": "Biryani (veg)", "packSize": "1 plate", "priceRange": {"min": 150, "max": 250}, "aliases": ["VEG BIRYANI"]},
+        {"name": "Biryani (chicken)", "packSize": "1 plate", "priceRange": {"min": 200, "max": 350}, "aliases": ["CHICKEN BIRYANI"]},
+        {"name": "Chow Mein/Noodles", "packSize": "1 plate", "priceRange": {"min": 100, "max": 180}, "aliases": ["CHOW MEIN", "NOODLES"]},
+        {"name": "Pizza (regular, medium)", "packSize": "1 pizza", "priceRange": {"min": 200, "max": 400}, "aliases": ["PIZZA"]},
+        {"name": "Burger", "packSize": "1 pc", "priceRange": {"min": 80, "max": 180}, "aliases": ["BURGER"]},
+        {"name": "Cold Coffee", "packSize": "1 glass", "priceRange": {"min": 90, "max": 150}, "aliases": ["COLD COFFEE"]},
+        {"name": "Samosa", "packSize": "1 pc", "priceRange": {"min": 15, "max": 25}, "aliases": ["SAMOSA"]},
+        {"name": "Vada Pav", "packSize": "1 pc", "priceRange": {"min": 20, "max": 40}, "aliases": ["VADA PAV"]},
+        {"name": "Pav Bhaji", "packSize": "1 plate", "priceRange": {"min": 90, "max": 150}, "aliases": ["PAV BHAJI"]},
+        {"name": "Tandoori Roti", "packSize": "1 pc", "priceRange": {"min": 15, "max": 30}, "aliases": ["TANDOORI ROTI"]},
+        {"name": "Gulab Jamun", "packSize": "2 pcs", "priceRange": {"min": 40, "max": 70}, "aliases": ["GULAB JAMUN"]}
+      ]
+    },
+    {
+      "name": "Subscriptions & Digital Services",
+      "items": [
+        {"name": "Netflix Basic", "packSize": "monthly", "priceRange": {"min": 149, "max": 199}, "aliases": ["NETFLIX BASIC"]},
+        {"name": "Netflix Standard", "packSize": "monthly", "priceRange": {"min": 499, "max": 649}, "aliases": ["NETFLIX STANDARD"]},
+        {"name": "Amazon Prime", "packSize": "annual", "priceRange": {"min": 1499, "max": 1599}, "aliases": ["AMAZON PRIME"]},
+        {"name": "Disney+ Hotstar (mobile)", "packSize": "annual", "priceRange": {"min": 499, "max": 899}, "aliases": ["HOTSTAR"]},
+        {"name": "Jio Prepaid Plan", "packSize": "monthly, ~1.5GB/day", "priceRange": {"min": 179, "max": 299}, "aliases": ["JIO RECHARGE"]},
+        {"name": "Airtel Prepaid Plan", "packSize": "monthly", "priceRange": {"min": 179, "max": 319}, "aliases": ["AIRTEL RECHARGE"]},
+        {"name": "Vi Prepaid Plan", "packSize": "monthly", "priceRange": {"min": 179, "max": 299}, "aliases": ["VI RECHARGE"]},
+        {"name": "Broadband Plan (~100Mbps)", "packSize": "monthly", "priceRange": {"min": 700, "max": 1200}, "aliases": ["BROADBAND PLAN"]},
+        {"name": "Gym Membership (local)", "packSize": "monthly", "priceRange": {"min": 1000, "max": 3000}, "aliases": ["GYM MEMBERSHIP"]},
+        {"name": "Spotify Premium", "packSize": "monthly", "priceRange": {"min": 119, "max": 149}, "aliases": ["SPOTIFY PREMIUM"]},
+        {"name": "JioSaavn Pro", "packSize": "monthly", "priceRange": {"min": 99, "max": 129}, "aliases": ["JIOSAAVN PRO"]},
+        {"name": "Google One (100GB)", "packSize": "monthly", "priceRange": {"min": 130, "max": 150}, "aliases": ["GOOGLE ONE"]},
+        {"name": "Digital Magazine/News Subscription", "packSize": "monthly", "priceRange": {"min": 99, "max": 300}, "aliases": ["DIGITAL SUBSCRIPTION"]}
+      ],
+      "_note": "This category doubles as trap-keyword test data - see lib/matching.ts trap-keyword scan (auto-renew, free trial, convenience fee, etc.), independent of the price ranges above."
+    },
+    {
+      "name": "Toys & Games",
+      "items": [
+        {"name": "Building Blocks Set (basic)", "packSize": "1 set", "priceRange": {"min": 300, "max": 800}, "aliases": ["BUILDING BLOCKS"]},
+        {"name": "Remote Control Car", "packSize": "1 pc", "priceRange": {"min": 500, "max": 1500}, "aliases": ["RC CAR"]},
+        {"name": "Ludo/Snakes & Ladders", "packSize": "1 set", "priceRange": {"min": 100, "max": 250}, "aliases": ["LUDO", "SNAKES LADDERS"]},
+        {"name": "Monopoly India Edition", "packSize": "1 set", "priceRange": {"min": 500, "max": 900}, "aliases": ["MONOPOLY"]},
+        {"name": "Soft Toys (medium)", "packSize": "1 pc", "priceRange": {"min": 300, "max": 800}, "aliases": ["SOFT TOY"]},
+        {"name": "Bat-Ball Set (kids)", "packSize": "1 set", "priceRange": {"min": 200, "max": 400}, "aliases": ["BAT BALL SET"]},
+        {"name": "Puzzle Set", "packSize": "1 set", "priceRange": {"min": 200, "max": 500}, "aliases": ["PUZZLE SET"]},
+        {"name": "Art & Craft Kit", "packSize": "1 kit", "priceRange": {"min": 300, "max": 700}, "aliases": ["ART CRAFT KIT"]},
+        {"name": "Action Figure (budget)", "packSize": "1 pc", "priceRange": {"min": 200, "max": 500}, "aliases": ["ACTION FIGURE"]}
+      ]
+    }
+  ]
+}

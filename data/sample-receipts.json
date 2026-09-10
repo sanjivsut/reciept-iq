@@ -1,0 +1,75 @@
+{
+  "_readme": "Canned sample receipts for the sample-picker flow. No OCR is run on these. Each sample is designed to deterministically surface at least one Overpriced item and at least one Subscription/Fee Trap so the demo never falls flat. Amounts are in INR and illustrative.",
+  "samples": [
+    {
+      "id": "kirana-store",
+      "title": "Neighbourhood kirana store",
+      "blurb": "Everyday groceries with a padded salt price and a sneaky bag charge.",
+      "store": "SHRI BALAJI KIRANA STORE",
+      "date": "2026-02-14",
+      "rawText": "SHRI BALAJI KIRANA STORE\nBILL NO 4471   14/02/2026\n--------------------------------\nAASHIRVAAD ATTA 5KG        265.00\nTATA SALT 1KG               60.00\nFORTUNE SUNFLOWER OIL 1L   160.00\nAMUL BUTTER 100G            58.00\nPARLE G 800G                88.00\nCARRY BAG CHARGE            10.00\nCONVENIENCE FEE             15.00\n--------------------------------\nTOTAL                      656.00",
+      "items": [
+        { "name": "AASHIRVAAD ATTA 5KG", "qty": 1, "price": 265 },
+        { "name": "TATA SALT 1KG", "qty": 1, "price": 60 },
+        { "name": "FORTUNE SUNFLOWER OIL 1L", "qty": 1, "price": 160 },
+        { "name": "AMUL BUTTER 100G", "qty": 1, "price": 58 },
+        { "name": "PARLE G 800G", "qty": 1, "price": 88 },
+        { "name": "CARRY BAG CHARGE", "qty": 1, "price": 10 },
+        { "name": "CONVENIENCE FEE", "qty": 1, "price": 15 }
+      ]
+    },
+    {
+      "id": "supermarket",
+      "title": "Big-format supermarket",
+      "blurb": "Mostly fair prices, one heavily marked-up shampoo, and an auto-renewing membership.",
+      "store": "FRESHMART HYPERMARKET",
+      "date": "2026-03-02",
+      "rawText": "FRESHMART HYPERMARKET\nGST 27ABCDE1234F1Z5\n--------------------------------\nCLINIC PLUS SHAMPOO 340ML  175.00\nHEAD & SHOULDERS 340ML     420.00\nMAGGI NOODLES 4 PACK        58.00\nOREO 120G                   40.00\nDETTOL 125ML                82.00\nSURF EXCEL 1KG             145.00\nMEMBERSHIP FEE AUTO-RENEWAL 499.00\nLOYALTY CLUB RENEWAL       199.00\n--------------------------------\nTOTAL                     1618.00",
+      "items": [
+        { "name": "CLINIC PLUS SHAMPOO 340ML", "qty": 1, "price": 175 },
+        { "name": "HEAD & SHOULDERS 340ML", "qty": 1, "price": 420 },
+        { "name": "MAGGI NOODLES 4 PACK", "qty": 1, "price": 58 },
+        { "name": "OREO 120G", "qty": 1, "price": 40 },
+        { "name": "DETTOL 125ML", "qty": 1, "price": 82 },
+        { "name": "SURF EXCEL 1KG", "qty": 1, "price": 145 },
+        { "name": "MEMBERSHIP FEE AUTO-RENEWAL", "qty": 1, "price": 499 },
+        { "name": "LOYALTY CLUB RENEWAL", "qty": 1, "price": 199 }
+      ]
+    },
+    {
+      "id": "electronics-store",
+      "title": "Mobile & electronics shop",
+      "blurb": "Fair phone price, but the cable is 2x and there's a protection plan bolted on.",
+      "store": "GADGET POINT",
+      "date": "2026-01-20",
+      "rawText": "GADGET POINT\nINVOICE GP/2026/0192\n--------------------------------\nREDMI SMARTPHONE 6/128    11999.00\nUSB CABLE TYPE-C            899.00\nTEMPERED SCREEN GUARD      199.00\nPHONE BACK COVER           349.00\nBOAT WIRED EARPHONES       499.00\nEXTENDED WARRANTY PROTECTION PLAN 1499.00\nHANDLING FEE                99.00\n--------------------------------\nTOTAL                    15543.00",
+      "items": [
+        { "name": "REDMI SMARTPHONE 6/128", "qty": 1, "price": 11999 },
+        { "name": "USB CABLE TYPE-C", "qty": 1, "price": 899 },
+        { "name": "TEMPERED SCREEN GUARD", "qty": 1, "price": 199 },
+        { "name": "PHONE BACK COVER", "qty": 1, "price": 349 },
+        { "name": "BOAT WIRED EARPHONES", "qty": 1, "price": 499 },
+        { "name": "EXTENDED WARRANTY PROTECTION PLAN", "qty": 1, "price": 1499 },
+        { "name": "HANDLING FEE", "qty": 1, "price": 99 }
+      ]
+    },
+    {
+      "id": "restaurant-bill",
+      "title": "Restaurant dinner bill",
+      "blurb": "A dosa priced like a thali, plus the usual service charge you can decline.",
+      "store": "SPICE GARDEN FAMILY RESTAURANT",
+      "date": "2026-02-28",
+      "rawText": "SPICE GARDEN FAMILY RESTAURANT\nTABLE 12   COVERS 3\n--------------------------------\nMASALA DOSA                220.00\nIDLI SAMBAR                 70.00\nPANEER BUTTER MASALA       280.00\nTANDOORI ROTI X4           100.00\nCOLD COFFEE                130.00\nGULAB JAMUN                 60.00\nSERVICE CHARGE              95.00\nPACKING & CONVENIENCE FEE   40.00\n--------------------------------\nTOTAL                      995.00",
+      "items": [
+        { "name": "MASALA DOSA", "qty": 1, "price": 220 },
+        { "name": "IDLI SAMBAR", "qty": 1, "price": 70 },
+        { "name": "PANEER BUTTER MASALA", "qty": 1, "price": 280 },
+        { "name": "TANDOORI ROTI X4", "qty": 4, "price": 100 },
+        { "name": "COLD COFFEE", "qty": 1, "price": 130 },
+        { "name": "GULAB JAMUN", "qty": 1, "price": 60 },
+        { "name": "SERVICE CHARGE", "qty": 1, "price": 95 },
+        { "name": "PACKING & CONVENIENCE FEE", "qty": 1, "price": 40 }
+      ]
+    }
+  ]
+}
