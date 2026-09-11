@@ -11,7 +11,7 @@ import type { LineItem } from "@/lib/types";
 export const dynamic = "force-dynamic";
 export const maxDuration = 20;
 
-const MODEL = process.env.GEMINI_MODEL || "gemini-2.0-flash";
+const MODEL = process.env.GEMINI_MODEL || "gemini-3.8-flash";
 const API_HOST = "https://generativelanguage.googleapis.com";
 const UPSTREAM_TIMEOUT_MS = 12000;
 
