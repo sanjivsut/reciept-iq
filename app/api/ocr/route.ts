@@ -13,7 +13,12 @@ export const maxDuration = 60;
 
 const MODEL = process.env.GEMINI_MODEL || "gemini-3.8-flash";
 const API_HOST = "https://generativelanguage.googleapis.com";
-const UPSTREAM_TIMEOUT_MS = 55000;
+// Gemini's free tier occasionally returns 503 "model overloaded" — usually
+// transient and resolved by an immediate retry. Split the maxDuration budget
+// across a few short attempts rather than one long one.
+const ATTEMPT_TIMEOUT_MS = 18000;
+const MAX_ATTEMPTS = 3;
+const RETRY_DELAY_MS = 400;
 
 const PROMPT = [
   "You are a receipt parser. Extract every purchasable line item from this receipt image.",
@@ -79,6 +84,30 @@ function extractText(payload: unknown): string {
   return parts.map((part) => part.text ?? "").join("").trim();
 }
 
+function sleep(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+/** One attempt at calling Gemini, with its own timeout. Returns the response,
+ *  or `null` if this attempt timed out (caller decides whether to retry). */
+async function callGemini(url: string, requestBody: string): Promise<Response | null> {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), ATTEMPT_TIMEOUT_MS);
+  try {
+    return await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      signal: controller.signal,
+      body: requestBody,
+    });
+  } catch (err) {
+    if (err instanceof DOMException && err.name === "AbortError") return null;
+    throw err;
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
 /** Tolerate a fenced ```json block or leading prose around the array. */
 function parseModelJson(text: string): unknown {
   const cleaned = text.replace(/^```(?:json)?/i, "").replace(/```$/i, "").trim();
@@ -121,36 +150,43 @@ export async function POST(request: Request) {
   }
 
   const url = `${API_HOST}/v1beta/models/${encodeURIComponent(MODEL)}:generateContent?key=${key}`;
-  const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), UPSTREAM_TIMEOUT_MS);
-
-  let upstream: Response;
-  try {
-    upstream = await fetch(url, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      signal: controller.signal,
-      body: JSON.stringify({
-        contents: [
-          {
-            role: "user",
-            parts: [
-              { text: PROMPT },
-              { inline_data: { mime_type: image.mime, data: image.base64 } },
-            ],
-          },
+  const requestBody = JSON.stringify({
+    contents: [
+      {
+        role: "user",
+        parts: [
+          { text: PROMPT },
+          { inline_data: { mime_type: image.mime, data: image.base64 } },
         ],
-        generationConfig: { temperature: 0, responseMimeType: "application/json" },
-      }),
-    });
-  } catch (err) {
-    clearTimeout(timer);
-    if (err instanceof DOMException && err.name === "AbortError") {
-      return fail(504, "upstream_error", "The vision model timed out.");
+      },
+    ],
+    generationConfig: { temperature: 0, responseMimeType: "application/json" },
+  });
+
+  let upstream: Response | null = null;
+  let timedOut = false;
+  for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
+    try {
+      const res = await callGemini(url, requestBody);
+      if (res === null) {
+        timedOut = true;
+        break; // a single attempt already used the full per-attempt budget
+      }
+      timedOut = false;
+      if (res.status === 503 && attempt < MAX_ATTEMPTS) {
+        await sleep(RETRY_DELAY_MS);
+        continue;
+      }
+      upstream = res;
+      break;
+    } catch {
+      return fail(502, "upstream_error", "Could not reach the vision model.");
     }
-    return fail(502, "upstream_error", "Could not reach the vision model.");
   }
-  clearTimeout(timer);
+
+  if (timedOut || !upstream) {
+    return fail(504, "upstream_error", "The vision model timed out.");
+  }
 
   if (upstream.status === 429) {
     return fail(429, "rate_limited", "The vision model is rate-limited right now.");
