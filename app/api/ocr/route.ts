@@ -9,11 +9,11 @@
 import type { LineItem } from "@/lib/types";
 
 export const dynamic = "force-dynamic";
-export const maxDuration = 20;
+export const maxDuration = 30;
 
 const MODEL = process.env.GEMINI_MODEL || "gemini-3.8-flash";
 const API_HOST = "https://generativelanguage.googleapis.com";
-const UPSTREAM_TIMEOUT_MS = 12000;
+const UPSTREAM_TIMEOUT_MS = 25000;
 
 const PROMPT = [
   "You are a receipt parser. Extract every purchasable line item from this receipt image.",
